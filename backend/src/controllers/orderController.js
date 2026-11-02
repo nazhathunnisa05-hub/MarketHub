@@ -364,3 +364,11 @@ exports.getAllOrdersAdmin = async (req, res) => {
     });
   }
 };
+// Temporary export check
+console.log("Order controller exports:", {
+  placeOrder: typeof module.exports.placeOrder,
+  getMyOrders: typeof module.exports.getMyOrders,
+  getVendorOrders: typeof module.exports.getVendorOrders,
+  updateOrderStatus: typeof module.exports.updateOrderStatus,
+  getAllOrdersAdmin: typeof module.exports.getAllOrdersAdmin
+});
