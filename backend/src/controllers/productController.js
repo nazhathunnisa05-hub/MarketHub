@@ -134,7 +134,10 @@ exports.getProducts = async (req, res) => {
     } else if (sort === "price_desc") {
       sortOption = { price: -1 };
     }
-
+console.log("Product DB:", Product.db.name);
+console.log("Product collection:", Product.collection.name);
+console.log("Product filter:", filter);
+console.log("Total products:", await Product.countDocuments());
     const products = await Product.find(filter)
       .sort(sortOption)
       .lean();
@@ -192,11 +195,7 @@ exports.getProductById = async (req, res) => {
 // GET MY PRODUCTS: logged-in vendor's products
 exports.getMyProducts = async (req, res) => {
   try {
-    console.log("Product DB:", Product.db.name);
-console.log("Product collection:", Product.collection.name);
-console.log("Product filter:", filter);
-console.log("Total products:", await Product.countDocuments());
-    const products = await Product.find({
+      const products = await Product.find({
       vendorId: req.user.id
     })
       .sort({ createdAt: -1 })
