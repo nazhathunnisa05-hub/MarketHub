@@ -13,27 +13,36 @@ This document records the functional and integration testing performed on the Ma
 - API Testing: Postman
 - Development Environment: Visual Studio Code
 
-## 3. Functional Test Cases
+## ## 3. Functional Test Cases
 
-| No. | Feature | Expected Result | Actual Result | Status |
-|---|---|---|---|---|
-| 1 | Customer Registration | Customer account should be created | To be recorded | Pending |
-| 2 | Customer Login | Valid credentials should generate a JWT | To be recorded | Pending |
-| 3 | Vendor Application | Customer should be able to apply as a vendor | To be recorded | Pending |
-| 4 | Vendor Approval | Admin should approve or reject vendor applications | To be recorded | Pending |
-| 5 | Product Management | Vendor should create, update and delete products | To be recorded | Pending |
-| 6 | Product Search | Products should be searchable with filters and sorting | To be recorded | Pending |
-| 7 | Image Upload | Product image should upload to AWS S3 | To be recorded | Pending |
-| 8 | Shopping Cart | Customer should add, update and remove cart items | To be recorded | Pending |
-| 9 | Checkout | Customer should be able to place an order | To be recorded | Pending |
-| 10 | Payment | Razorpay test payment should be verified | To be recorded | Pending |
-| 11 | Order Management | Customer and vendor should view relevant orders | To be recorded | Pending |
-| 12 | Order Status | Vendor should update shipment status | To be recorded | Pending |
-| 13 | Product Reviews | Eligible customers should submit reviews | To be recorded | Pending |
-| 14 | Coupons | Admin should manage coupons and customers should validate them | To be recorded | Pending |
-| 15 | PDF Invoice | Customer should download an invoice | To be recorded | Pending |
-| 16 | Admin Dashboard | Admin should view marketplace statistics | To be recorded | Pending |
-
+| No. | Feature | Actual Result | Status |
+|---|---|---|---|
+| 1 | Customer Registration | Account created successfully | PASS |
+| 2 | Customer Login | Login successful | PASS |
+| 3 | Vendor Application | Application submitted successfully | PASS |
+| 4 | Vendor Approval | Admin approved vendor application | PASS |
+| 5 | Vendor Dashboard | Approved vendor accessed dashboard | PASS |
+| 6 | Product Creation | Product created successfully | PASS |
+| 7 | Image Upload | Product image uploaded and displayed after refresh | PASS |
+| 8 | Product Search | Product found using search | PASS |
+| 9 | Product Filtering | Category and price filters worked | PASS |
+| 10 | Product Sorting | Price sorting worked | PASS |
+| 11 | Add to Cart | Product added successfully | PASS |
+| 12 | Cart Quantity | Quantity and subtotal updated correctly | PASS |
+| 13 | Cart Removal | Product removed successfully | PASS |
+| 14 | Checkout | Shipping details accepted | PASS |
+| 15 | Razorpay Payment | Test payment verified successfully | PASS |
+| 16 | Order Visibility | Customer and vendor could view order | PASS |
+| 17 | Order Status Update | Vendor updated shipment status | PASS |
+| 18 | Customer Order Tracking | Customer saw updated shipment status | PASS |
+| 19 | Product Reviews | Review submitted successfully | PASS |
+| 20 | Coupon Creation | Admin created coupon successfully | PASS |
+| 21 | Coupon Validation | Customer applied coupon successfully | PASS |
+| 22 | PDF Invoice | Invoice downloaded and opened successfully | PASS |
+| 23 | Admin Dashboard | Marketplace statistics displayed | PASS |
+| 24 | Admin Order Management | Admin viewed marketplace order | PASS |
+| 25 | Admin Product Management | Admin updated product successfully | PASS |
+| 26 | Admin Coupon Management | Admin activated and deactivated coupon | PASS |
 ## 4. Integration Testing
 
 | Component | Expected Result | Status |
