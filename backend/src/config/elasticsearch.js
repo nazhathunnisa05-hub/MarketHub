@@ -5,9 +5,6 @@ const elasticClient = new Client({
   auth: {
     username: process.env.ELASTICSEARCH_USERNAME,
     password: process.env.ELASTICSEARCH_PASSWORD
-  },
-  tls: {
-    rejectUnauthorized: false
   }
 });
 

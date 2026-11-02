@@ -28,12 +28,16 @@ const invoiceRoutes = require("./src/routes/invoiceRoutes");
 const { razorpayWebhook } = require("./src/controllers/paymentController");
 
 // CORS middleware
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
 // Razorpay webhook must be before express.json()
 app.post(
   "/api/payments/webhook",
