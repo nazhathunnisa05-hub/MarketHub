@@ -16,7 +16,6 @@ const { cartCount } = useCart();
     My Orders
   </Link>
 )}
-<Link to="/admin-dashboard">Admin Dashboard</Link>
 {user?.role === "vendor" && (
   <Link className="nav-link" to="/vendor-orders">
     Manage Orders
