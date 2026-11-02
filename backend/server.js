@@ -28,16 +28,26 @@ const invoiceRoutes = require("./src/routes/invoiceRoutes");
 const { razorpayWebhook } = require("./src/controllers/paymentController");
 
 // CORS middleware
+
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://markethub-frontend-two.vercel.app",
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error("Not allowed by CORS"));
+  },
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 204
 }));
+
 // Razorpay webhook must be before express.json()
 app.post(
   "/api/payments/webhook",
